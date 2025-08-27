@@ -1,3 +1,5 @@
+### Entry method: getTheCode() in class UI.
+
 ```mermaid
 sequenceDiagram
     UI ->> ViewModel: getTheCode()

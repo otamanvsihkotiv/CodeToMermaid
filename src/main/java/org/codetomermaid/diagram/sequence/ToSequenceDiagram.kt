@@ -49,6 +49,8 @@ private fun parseAndDescribe(
     // describe call from prev class to this class if not the entry method
     if (callerClassName != null) {
         lines.add("$TAB$callerClassName $MESSAGE_ARROW ${className}: $targetMethod()")
+    } else {
+        lines.addFirst("### Entry method: $targetMethod() in class $className.\n")
     }
 
     // find method decl and look through called methods in it
