@@ -56,7 +56,7 @@ private fun parseAndDescribe(
 
     requireNotNull(method) {
         "No method named $targetMethod in class ${className}.\n" +
-                "Methods found in class ${className}: ${parsedFile.methods.forEach { println(it.name) }}"
+                "Methods found in class ${className}: ${parsedFile.methods.map { it.name }}}"
     }
 
     // continue recursively until we find a method that doesn't call any (known) methods
