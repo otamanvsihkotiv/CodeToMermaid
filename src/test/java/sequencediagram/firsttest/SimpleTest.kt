@@ -1,6 +1,7 @@
 package sequencediagram.firsttest
 
 import org.codetomermaid.diagram.sequence.toSequenceDiagram
+import org.codetomermaid.utils.normalizeEOL
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -41,8 +42,8 @@ class SimpleTest {
             "simpletest"
         )
 
-        val expected = Files.readString(Path.of("src/test/resources/simpletest.md"))
-        val actual = Files.readString(Path.of("target/generated-diagrams/sequencediagram/simpletest.md"))
+        val expected = normalizeEOL(Files.readString(Path.of("src/test/resources/simpletest.md")))
+        val actual = normalizeEOL(Files.readString(Path.of("target/generated-diagrams/sequencediagram/simpletest.md")))
         assertEquals(expected, actual)
     }
 
